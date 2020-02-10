@@ -1,0 +1,28 @@
+{
+  "templates": [
+    {
+      "name": "Angular CLI",
+      "repo": "https://github.com/beeman/template-angular-cli"
+    },
+    {
+      "name": "TypeScript NPM Package",
+      "repo": "https://github.com/beeman/template-typescript-package"
+    },
+    {
+      "name": "Preact starter (TypeScript)",
+      "repo": "https://github.com/beeman/template-preact-ts"
+    },
+    {
+      "name": "Nuxt starter (TypeScript)",
+      "repo": "https://github.com/beeman/template-nuxt-ts"
+    },
+    {
+      "name": "Nest.js",
+      "repo": "https://github.com/beeman/template-nestjs"
+    },
+    {
+      "name": "Polymer PWA Starter",
+      "repo": "https://github.com/Polymer/pwa-starter-kit"
+    }
+  ]
+}
