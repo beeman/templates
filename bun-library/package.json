@@ -30,7 +30,7 @@
   "name": "bun-library",
   "repository": {
     "type": "git",
-    "url": "https://github.com/beeman/bun-library"
+    "url": "git+https://github.com/beeman/bun-library.git"
   },
   "peerDependencies": {
     "typescript": "^5"
