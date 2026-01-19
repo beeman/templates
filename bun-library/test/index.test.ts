@@ -1,0 +1,10 @@
+import { test, expect } from 'bun:test';
+import { greet } from '../src/index';
+
+test('greet function returns correct greeting', () => {
+  expect(greet('Alice')).toBe('Hello, Alice from bun-library!');
+});
+
+test('greet function defaults to World if no name is provided', () => {
+  expect(greet('World')).toBe('Hello, World from bun-library!');
+});
