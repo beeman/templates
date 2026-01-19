@@ -6,5 +6,5 @@ test('greet function returns correct greeting', () => {
 })
 
 test('greet function defaults to World if no name is provided', () => {
-  expect(greet('World')).toBe('Hello, World from bun-library!')
+  expect(greet()).toBe('Hello, World from bun-library!')
 })
