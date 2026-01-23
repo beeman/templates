@@ -1,0 +1,90 @@
+name: CI
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+  merge_group:
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          anchor: true
+          cargo-cache-key: cargo-programs
+          clippy: true
+          rustfmt: true
+          solana: true
+
+      - name: Build
+        run: bun run build
+
+      - name: Publish to pkg.pr.new
+        run: bun pkg-pr-new publish --packageManager=bun './clients/*'
+
+  check-types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          clippy: true
+          rustfmt: true
+
+      - name: Check Types
+        run: bun check-types
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          clippy: true
+          rustfmt: true
+
+      - name: Lint
+        run: bun lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+
+      - name: Setup Environment
+        uses: ./.github/actions/setup
+        with:
+          anchor: true
+          cargo-cache-key: cargo-programs
+          clippy: true
+          rustfmt: true
+          solana: true
+
+      - name: Test
+        run: bun run test

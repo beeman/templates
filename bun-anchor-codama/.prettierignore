@@ -1,0 +1,17 @@
+.DS_Store
+.anchor
+AGENTS.md
+CLAUDE.md
+build
+coverage
+dist
+node_modules
+pnpm-lock.yaml
+target/.rustc_info.json
+target/debug
+target/deploy
+target/release
+target/sbpf-solana-solana
+target/test-ledger
+test-ledger
+tmp
