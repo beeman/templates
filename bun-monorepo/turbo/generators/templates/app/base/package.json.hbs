@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@workspace/config-typescript": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "name": "{{ dashCase name }}",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
