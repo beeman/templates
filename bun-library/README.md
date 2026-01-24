@@ -24,6 +24,20 @@ If you're using this template directly (e.g., after cloning), you can install de
 bun install
 ```
 
+### GitHub Apps
+
+Create a repo on GitHub and install the following apps
+
+- [Changeset Bot](https://github.com/apps/changeset-bot/installations/select_target)
+- [pkg.pr.new](https://github.com/apps/pkg-pr-new/installations/select_target)
+- [Ellipsis](https://github.com/apps/ellipsis-dev/installations/select_target)
+
+### GitHub Workflow permissions
+
+Go to your repo `Settings` -> `Actions` -> `General` then scroll down to `Workflow permissions` and enable `Allow GitHub Actions to create and approve pull requests`.
+
+If this box is disabled go to your organization settings and enable it there.
+
 ### Development
 
 *   **Build**: `bun run build`
@@ -34,6 +48,17 @@ bun install
 *   **Test (Watch Mode)**: `bun run test:watch`
 
 ### Publishing
+
+This repo is built to use npm's 'Trusted Publishing'.
+
+The first time you want to manually deploy the project:
+
+- Ensure you have the right name in `package.json`.
+- Run `bun run build`
+- Run `npm publish --access public` - authenticate if you need to.
+- Go to the settings page of your new package on npm.
+- Configure your repo and point the workflow to `publish.yaml`.
+- After this, use the flow below.
 
 This template uses Changesets for versioning and publishing.
 
