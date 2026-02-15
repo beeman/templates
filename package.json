@@ -2,6 +2,11 @@
   "name": "Templates",
   "description": "Project templates for create-seed.",
   "private": true,
+  "repository": {
+    "name": "beeman/templates",
+    "type": "git",
+    "url": "https://github.com/beeman/templates"
+  },
   "scripts": {
     "generate": "bun x create-seed@latest registry generate",
     "validate": "bun x create-seed@latest registry validate"

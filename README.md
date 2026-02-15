@@ -1,6 +1,6 @@
 # Templates
 
-Project templates for [create-seed](https://github.com/beeman/create-seed).
+Project templates for create-seed.
 
 ## Available Templates
 
