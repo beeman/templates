@@ -29,11 +29,18 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       templates: ${{ steps.matrix.outputs.templates }}
+      ref: ${{ steps.ref.outputs.ref }}
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - id: ref
+        run: |
+          # For PRs use the head ref, otherwise use the branch name
+          REF="${{ github.head_ref || github.ref_name }}"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "Ref: $REF"
       - id: matrix
         run: |
-          TEMPLATES=$(jq -c '[.templates[].name]' templates.json)
+          TEMPLATES=$(jq -c '[.templates[].path]' templates.json)
           echo "templates=$TEMPLATES" >> "$GITHUB_OUTPUT"
           echo "Templates: $TEMPLATES"
 
@@ -63,12 +70,17 @@ jobs:
 
       - name: Scaffold project
         run: |
+          REPO="${{ github.event.pull_request.head.repo.full_name || github.repository }}"
+          REF="${{ needs.setup-templates.outputs.ref }}"
+          TEMPLATE="gh:${REPO}/${{ matrix.template }}#${REF}"
+          echo "Template: $TEMPLATE"
+
           case "${{ matrix.pm }}" in
             bun)  CMD="bun x create-seed@latest" ;;
             npx)  CMD="npx -y create-seed@latest" ;;
             pnpx) CMD="pnpx create-seed@latest" ;;
           esac
-          $CMD test-project -t ${{ matrix.template }}
+          $CMD test-project -t "$TEMPLATE"
         working-directory: ${{ runner.temp }}
 
       - name: Build
