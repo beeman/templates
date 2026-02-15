@@ -2,6 +2,7 @@
   "templates": [
     {
       "description": "TypeScript library with Bun, tsup, Biome, and Changesets",
+      "id": "gh:beeman/templates/bun-library",
       "name": "bun-library",
       "path": "bun-library"
     }
