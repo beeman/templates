@@ -83,13 +83,8 @@ jobs:
           $CMD test-project -t "$TEMPLATE"
         working-directory: ${{ runner.temp }}
 
-      - name: Build
-        run: |
-          case "${{ matrix.pm }}" in
-            bun)  bun run build ;;
-            npx)  npm run build ;;
-            pnpx) pnpm run build ;;
-          esac
+      - name: CI
+        run: bun run ci
         working-directory: ${{ runner.temp }}/test-project
 
       - name: Verify clean git
