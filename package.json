@@ -1,0 +1,9 @@
+{
+  "name": "Templates",
+  "description": "Project templates for create-seed.",
+  "private": true,
+  "scripts": {
+    "generate": "bun x create-seed@latest registry generate",
+    "validate": "bun x create-seed@latest registry validate"
+  }
+}
