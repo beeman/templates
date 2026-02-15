@@ -44,7 +44,7 @@
     "lint": "biome check --error-on-warnings",
     "lint:fix": "biome check --error-on-warnings --write",
     "release": "changeset publish",
-    "ruler": "ruler apply",
+    "ruler:apply": "ruler apply --local-only",
     "test": "bun test",
     "test:watch": "bun test --watch",
     "version": "changeset version && bun lint:fix"
