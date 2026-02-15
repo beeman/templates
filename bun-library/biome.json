@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.0/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -70,6 +70,7 @@
       "style": {
         "noUselessElse": "error",
         "useComponentExportOnlyModules": {
+          "level": "warn",
           "options": {
             "allowConstantExport": true
           }
@@ -86,7 +87,20 @@
           }
         }
       },
+      "formatter": {
+        "enabled": false
+      },
       "includes": ["package.json"]
+    },
+    {
+      "includes": ["test/**"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnresolvedImports": "off"
+          }
+        }
+      }
     }
   ],
   "vcs": {
