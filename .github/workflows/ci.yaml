@@ -1,0 +1,91 @@
+name: CI
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 21 * * *' # 4:20 AM ICT (UTC+7)
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate registry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2
+      - run: bun x create-seed@latest registry validate
+
+  setup-templates:
+    name: Discover templates
+    runs-on: ubuntu-latest
+    outputs:
+      templates: ${{ steps.matrix.outputs.templates }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - id: matrix
+        run: |
+          TEMPLATES=$(jq -c '[.templates[].name]' templates.json)
+          echo "templates=$TEMPLATES" >> "$GITHUB_OUTPUT"
+          echo "Templates: $TEMPLATES"
+
+  test:
+    name: "${{ matrix.template }} · node ${{ matrix.node }} · ${{ matrix.pm }}"
+    runs-on: ubuntu-latest
+    needs: [validate, setup-templates]
+    if: needs.setup-templates.outputs.templates != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        template: ${{ fromJson(needs.setup-templates.outputs.templates) }}
+        node: [22, 24]
+        pm: [bun, npx, pnpx]
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2
+
+      - name: Install pnpm
+        if: matrix.pm == 'pnpx'
+        run: npm install -g pnpm
+
+      - name: Scaffold project
+        run: |
+          case "${{ matrix.pm }}" in
+            bun)  CMD="bun x create-seed@latest" ;;
+            npx)  CMD="npx -y create-seed@latest" ;;
+            pnpx) CMD="pnpx create-seed@latest" ;;
+          esac
+          $CMD test-project -t ${{ matrix.template }}
+        working-directory: ${{ runner.temp }}
+
+      - name: Build
+        run: |
+          case "${{ matrix.pm }}" in
+            bun)  bun run build ;;
+            npx)  npm run build ;;
+            pnpx) pnpm run build ;;
+          esac
+        working-directory: ${{ runner.temp }}/test-project
+
+      - name: Verify clean git
+        run: |
+          STATUS=$(git status --porcelain)
+          if [ -n "$STATUS" ]; then
+            echo "::error::Git is dirty after install + build:"
+            echo "$STATUS"
+            exit 1
+          fi
+        working-directory: ${{ runner.temp }}/test-project
