@@ -1,0 +1,9 @@
+{
+  "templates": [
+    {
+      "description": "TypeScript library with Bun, tsup, Biome, and Changesets",
+      "name": "bun-library",
+      "path": "bun-library"
+    }
+  ]
+}
