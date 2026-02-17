@@ -38,9 +38,11 @@ const config: CSpellSettings = {
     ...getPackageNames(),
     // English
     'beeman',
+    'distroless',
     'ellipsify',
     'localnet',
     'mainnet',
+    'nossl',
     'nums',
     'rtishchev',
     'samui',
