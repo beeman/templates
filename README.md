@@ -19,3 +19,11 @@ TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, 
 ```bash
 bun x create-seed@latest my-app -t gh:beeman/templates/bun-library-solana-kit
 ```
+
+### `bun-monorepo`
+
+Bun monorepo template with Turbo, Hono API, Biome, and Docker support
+
+```bash
+bun x create-seed@latest my-app -t gh:beeman/templates/bun-monorepo
+```
