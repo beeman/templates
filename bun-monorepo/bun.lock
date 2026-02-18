@@ -45,35 +45,21 @@
         "react-router": "catalog:",
       },
       "devDependencies": {
+        "@tailwindcss/vite": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
         "@workspace/config-typescript": "workspace:*",
-        "@workspace/config-vite": "workspace:*",
         "babel-plugin-react-compiler": "catalog:",
         "typescript": "catalog:",
         "vite": "catalog:",
+        "vite-bundle-analyzer": "catalog:",
       },
     },
     "packages/config-typescript": {
       "name": "@workspace/config-typescript",
       "version": "0.0.0",
-    },
-    "packages/config-vite": {
-      "name": "@workspace/config-vite",
-      "version": "0.0.0",
-      "dependencies": {
-        "@tailwindcss/vite": "catalog:",
-        "@vitejs/plugin-react": "catalog:",
-        "babel-plugin-react-compiler": "catalog:",
-        "vite": "catalog:",
-        "vite-bundle-analyzer": "catalog:",
-      },
-      "devDependencies": {
-        "@types/bun": "catalog:",
-        "@workspace/config-typescript": "workspace:*",
-        "typescript": "catalog:",
-      },
     },
     "packages/env": {
       "name": "@workspace/env",
@@ -741,8 +727,6 @@
     "@vitejs/plugin-react": ["@vitejs/plugin-react@5.1.1", "", { "dependencies": { "@babel/core": "^7.28.5", "@babel/plugin-transform-react-jsx-self": "^7.27.1", "@babel/plugin-transform-react-jsx-source": "^7.27.1", "@rolldown/pluginutils": "1.0.0-beta.47", "@types/babel__core": "^7.20.5", "react-refresh": "^0.18.0" }, "peerDependencies": { "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0" } }, "sha512-WQfkSw0QbQ5aJ2CHYw23ZGkqnRwqKHD/KYsMeTkZzPT4Jcf0DcBxBtwMJxnu6E7oxw5+JC6ZAiePgh28uJ1HBA=="],
 
     "@workspace/config-typescript": ["@workspace/config-typescript@workspace:packages/config-typescript"],
-
-    "@workspace/config-vite": ["@workspace/config-vite@workspace:packages/config-vite"],
 
     "@workspace/env": ["@workspace/env@workspace:packages/env"],
 
