@@ -7,7 +7,6 @@
     "@workspace/env": "workspace:*",
     "@workspace/i18n": "workspace:*",
     "@workspace/ui": "workspace:*",
-    "@wxt-dev/browser": "catalog:",
     "react-router": "catalog:",
     "superjson": "2.2.6"
   },
