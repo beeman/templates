@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@workspace/env": "workspace:*",
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@workspace/config-typescript": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "build": "bun build --compile --minify src/index.ts --outfile dist/api",
+    "check-types": "tsc --noEmit",
+    "dev": "bun --watch src/index.ts",
+    "docker:build": "docker build --progress=plain -f Dockerfile -t my-app-api ../..",
+    "docker:run": "docker run --rm --name my-app-api --init --stop-signal=SIGINT -it --env-file .env -p 3000:3000 my-app-api",
+    "postinstall": "[ -f .env.example ] && [ ! -f .env ] && cp -v .env.example .env || true"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

@@ -1,0 +1,61 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# CloudFlare
+.wrangler
+worker-configuration.d.ts
+
+# Bun
+*.bun-build
+
+# Build Outputs
+out
+build
+dist
+.output
+.expo
+target
+schemas
+
+# Wxt
+web-ext.config.ts
+
+# Validators
+.surfpool
+
+# Debug
+npm-debug.log*
+
+# Misc
+.DS_Store
+*.pem
+tmp
+
+# React Native
+android
+ios
+
+# IDEs
+.vscode
+
+# Playwright

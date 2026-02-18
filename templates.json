@@ -11,6 +11,12 @@
       "id": "gh:beeman/templates/bun-library-solana-kit",
       "name": "bun-library-solana-kit",
       "path": "bun-library-solana-kit"
+    },
+    {
+      "description": "Bun monorepo template with Turbo, Hono API, Biome, and Docker support",
+      "id": "gh:beeman/templates/bun-monorepo",
+      "name": "bun-monorepo",
+      "path": "bun-monorepo"
     }
   ]
 }

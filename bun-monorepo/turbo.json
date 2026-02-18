@@ -1,0 +1,29 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["build/**", "dist/**", ".output"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "docker:build": {
+      "cache": false
+    },
+    "docker:run": {
+      "cache": false,
+      "dependsOn": ["docker:build"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
+    }
+  },
+  "ui": "stream"
+}
