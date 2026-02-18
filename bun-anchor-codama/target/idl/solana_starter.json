@@ -1,0 +1,76 @@
+{
+  "address": "3Cd4yg5VeMW1vHiNeKd7scc5AiuUjUU5C6CGZDszWxbg",
+  "metadata": {
+    "name": "solana_starter",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "initialize",
+      "discriminator": [175, 175, 109, 31, 13, 152, 155, 237],
+      "accounts": [],
+      "args": []
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "CustomError",
+      "msg": "Custom error message"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidName",
+      "msg": "Invalid name, must be 32 characters or less."
+    },
+    {
+      "code": 6002,
+      "name": "MaxNodesReached",
+      "msg": "Maximum number of nodes reached for this operator."
+    },
+    {
+      "code": 6003,
+      "name": "CannotDowngrade",
+      "msg": "Cannot downgrade to a lower tier client."
+    },
+    {
+      "code": 6004,
+      "name": "AlreadyAtTier",
+      "msg": "Already at this client tier."
+    },
+    {
+      "code": 6005,
+      "name": "InsufficientTokens",
+      "msg": "Insufficient TPS tokens to upgrade."
+    },
+    {
+      "code": 6006,
+      "name": "NoYieldToHarvest",
+      "msg": "No yield to harvest yet."
+    },
+    {
+      "code": 6007,
+      "name": "InvalidNodeIndex",
+      "msg": "Invalid node index."
+    },
+    {
+      "code": 6008,
+      "name": "ArithmeticOverflow",
+      "msg": "Arithmetic overflow in yield calculation."
+    },
+    {
+      "code": 6009,
+      "name": "Unauthorized",
+      "msg": "Unauthorized: Only the operator authority can perform this action."
+    }
+  ],
+  "constants": [
+    {
+      "name": "SEED",
+      "type": "string",
+      "value": "\"anchor\""
+    }
+  ]
+}

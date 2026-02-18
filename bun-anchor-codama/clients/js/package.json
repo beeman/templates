@@ -1,0 +1,53 @@
+{
+  "name": "@beeman/solana-starter",
+  "version": "0.0.0",
+  "description": "JavaScript client for the Solana Starter program",
+  "sideEffects": false,
+  "module": "./dist/src/index.mjs",
+  "main": "./dist/src/index.js",
+  "types": "./dist/types/index.d.ts",
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/src/index.mjs",
+      "require": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "./dist/src",
+    "./dist/types"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsup && tsc -p ./tsconfig.declarations.json",
+    "build:docs": "typedoc",
+    "prepublishOnly": "bun run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeman/bun-anchor-codama.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beeman/bun-anchor-codama/issues"
+  },
+  "homepage": "https://github.com/beeman/bun-anchor-codama#readme",
+  "license": "MIT",
+  "peerDependencies": {
+    "@solana/kit": "^5.4.0"
+  },
+  "ava": {
+    "nodeArguments": [
+      "--no-warnings"
+    ],
+    "typescript": {
+      "compile": false,
+      "rewritePaths": {
+        "test/": "dist/test/"
+      }
+    }
+  }
+}
