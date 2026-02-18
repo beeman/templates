@@ -22,7 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2
-      - run: bun x create-seed@latest registry validate
+      - name: Validate registry (create-seed@${{ vars.CREATE_SEED_TAG || 'latest' }})
+        run: |
+          TAG="${{ vars.CREATE_SEED_TAG || 'latest' }}"
+          echo "Using create-seed@${TAG}"
+          bun x create-seed@${TAG} registry validate
 
   setup-templates:
     name: Discover templates
@@ -68,17 +72,19 @@ jobs:
         if: matrix.pm == 'pnpx'
         run: npm install -g pnpm
 
-      - name: Scaffold project
+      - name: Scaffold project (create-seed@${{ vars.CREATE_SEED_TAG || 'latest' }})
         run: |
           REPO="${{ github.event.pull_request.head.repo.full_name || github.repository }}"
           REF="${{ needs.setup-templates.outputs.ref }}"
           TEMPLATE="gh:${REPO}/${{ matrix.template }}#${REF}"
           echo "Template: $TEMPLATE"
 
+          TAG="${{ vars.CREATE_SEED_TAG || 'latest' }}"
+          echo "Using create-seed@${TAG}"
           case "${{ matrix.pm }}" in
-            bun)  CMD="bun x create-seed@latest" ;;
-            npx)  CMD="npx -y create-seed@latest" ;;
-            pnpx) CMD="pnpx create-seed@latest" ;;
+            bun)  CMD="bun x create-seed@${TAG}" ;;
+            npx)  CMD="npx -y create-seed@${TAG}" ;;
+            pnpx) CMD="pnpx create-seed@${TAG}" ;;
           esac
           $CMD test-project -t "$TEMPLATE"
         working-directory: ${{ runner.temp }}

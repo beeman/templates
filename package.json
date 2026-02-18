@@ -8,7 +8,7 @@
     "url": "https://github.com/beeman/templates"
   },
   "scripts": {
-    "generate": "bun x create-seed@latest registry generate",
-    "validate": "bun x create-seed@latest registry validate"
+    "generate": "bun x create-seed@${CREATE_SEED_TAG:-latest} registry generate",
+    "validate": "bun x create-seed@${CREATE_SEED_TAG:-latest} registry validate"
   }
 }
