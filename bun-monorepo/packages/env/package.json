@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@wxt-dev/browser": "catalog:",
+    "@t3-oss/env-core": "0.13.8",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -9,11 +9,12 @@
     "typescript": "catalog:"
   },
   "exports": {
-    "./*": "./src/*.ts"
+    "./server": "./src/server.ts",
+    "./web": "./src/web.ts"
   },
   "license": "MIT",
   "name": "@workspace/env",
-  "private": false,
+  "private": true,
   "scripts": {
     "check-types": "tsc --noEmit"
   },
