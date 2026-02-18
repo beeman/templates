@@ -52,6 +52,7 @@
   "scripts": {
     "build": "turbo run build",
     "check-types": "turbo run check-types",
+    "ci": "turbo run build check-types test && bun run lint",
     "clean": "find . -type d \\( -name 'node_modules' -o -name 'build' -o -name 'dist' -o -name '.turbo' -o -name '.wxt' -o -name '.expo' -o -name 'android' -o -name 'ios' -o -name '.astro' \\) -prune -exec rm -rf '{}' +",
     "dev": "turbo run dev",
     "docker:build": "turbo run docker:build",

@@ -25,6 +25,9 @@ coverage
 .wrangler
 worker-configuration.d.ts
 
+# Bun
+*.bun-build
+
 # Build Outputs
 .next
 out
