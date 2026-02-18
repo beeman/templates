@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@cloudflare/vite-plugin": "1.15.3",
     "@workspace/env": "workspace:*",
     "@workspace/i18n": "workspace:*",
     "@workspace/shell": "workspace:*",
@@ -17,8 +16,7 @@
     "@workspace/config-vite": "workspace:*",
     "babel-plugin-react-compiler": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:",
-    "wrangler": "4.51.0"
+    "vite": "catalog:"
   },
   "name": "web",
   "private": true,

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.2/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -56,6 +56,9 @@
       "complexity": {
         "useLiteralKeys": "off"
       },
+      "correctness": {
+        "noUnresolvedImports": "off"
+      },
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",
@@ -69,37 +72,11 @@
       "recommended": true,
       "style": {
         "noUselessElse": "error",
-        "useComponentExportOnlyModules": {
-          "options": {
-            "allowConstantExport": true
-          }
-        }
+        "useComponentExportOnlyModules": "off"
       }
     }
   },
-  "overrides": [
-    {
-      "includes": ["**/*.astro"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "off",
-            "noUnusedVariables": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": ["apps/mobile/src/global.css"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noDuplicateCustomProperties": "off"
-          }
-        }
-      }
-    }
-  ],
+  "overrides": [],
   "vcs": {
     "clientKind": "git",
     "defaultBranch": "main",

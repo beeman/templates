@@ -29,12 +29,10 @@ worker-configuration.d.ts
 *.bun-build
 
 # Build Outputs
-.next
 out
 build
 dist
 .output
-.astro
 .expo
 target
 schemas

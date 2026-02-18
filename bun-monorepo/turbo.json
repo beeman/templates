@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**", ".output"]
+      "outputs": ["build/**", "dist/**", ".output"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]

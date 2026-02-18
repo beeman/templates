@@ -22,7 +22,7 @@
   },
   "description": "Bun monorepo template with Turbo, Hono API, Biome, and Docker support",
   "devDependencies": {
-    "@biomejs/biome": "2.3.10",
+    "@biomejs/biome": "2.4.2",
     "@commitlint/cli": "20.2.0",
     "@commitlint/config-conventional": "20.2.0",
     "@commitlint/types": "20.2.0",
@@ -46,7 +46,7 @@
     "build": "turbo run build",
     "check-types": "turbo run check-types",
     "ci": "turbo run build check-types test && bun run lint",
-    "clean": "find . -type d \\( -name 'node_modules' -o -name 'build' -o -name 'dist' -o -name '.turbo' -o -name '.expo' -o -name 'android' -o -name 'ios' -o -name '.astro' \\) -prune -exec rm -rf '{}' +",
+    "clean": "find . -type d \\( -name 'node_modules' -o -name 'build' -o -name 'dist' -o -name '.turbo' \\) -prune -exec rm -rf '{}' +",
     "dev": "turbo run dev",
     "docker:build": "turbo run docker:build",
     "docker:run": "turbo run docker:run",

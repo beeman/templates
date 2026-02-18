@@ -1,13 +1,13 @@
 import { UiErrorBoundary } from '@workspace/ui/components/ui-error-boundary'
 import { UiLoaderFull } from '@workspace/ui/components/ui-loader-full'
 import { UiNotFound } from '@workspace/ui/components/ui-not-found'
-import { createHashRouter, Navigate, type RouteObject, RouterProvider } from 'react-router'
+import { createBrowserRouter, Navigate, type RouteObject, RouterProvider } from 'react-router'
 import { DashboardRoutes } from './dashboard-routes.tsx'
 import { rootRouteLoader } from './data-access/root-route-loader.tsx'
 import { ShellUiLayout } from './ui/shell-ui-layout.tsx'
 
 function createRouter() {
-  return createHashRouter([
+  return createBrowserRouter([
     {
       children: getAppRoutes(),
       errorElement: <UiErrorBoundary />,
