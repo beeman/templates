@@ -16,7 +16,7 @@
 - **Linting**: Biome
 - **Naming**: camelCase variables/functions, PascalCase types
 - **Error Handling**: Use `tryCatch` from `@workspace/core`
-- **Testing**: Vitest globals, jsdom env, ARRANGE/ACT/ASSERT pattern
+- **Testing**: `bun test`, ARRANGE/ACT/ASSERT pattern
 - **Imports**: Type imports separate, alphabetical sorting
 
 ## Testing Guidelines

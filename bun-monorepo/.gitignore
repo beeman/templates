@@ -44,7 +44,6 @@ web-ext.config.ts
 
 # Validators
 .surfpool
-test-ledger
 
 # Debug
 npm-debug.log*
@@ -62,5 +61,3 @@ ios
 .vscode
 
 # Playwright
-playwright-report
-test-results
