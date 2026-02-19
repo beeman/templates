@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.1",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@bun-tanstack-start/config": "workspace:*",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    "./server": "./src/server.ts",
+    "./web": "./src/web.ts"
+  },
+  "name": "@bun-tanstack-start/env",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
