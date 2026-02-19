@@ -1,0 +1,48 @@
+{
+  "name": "bun-convex-tanstack",
+  "private": true,
+  "description": "Bun monorepo template with Turbo, Convex and Tanstack Router web app",
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "@convex-dev/agent": "^0.3.2",
+      "@convex-dev/better-auth": "^0.10.9",
+      "@types/bun": "1.3.9",
+      "better-auth": "1.4.9",
+      "convex": "^1.32.0",
+      "dotenv": "^17.2.2",
+      "typescript": "^5",
+      "zod": "^4.1.13"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "ci": "turbo run build check-types test && bun run lint",
+    "clean": "find . -type d \\( -name 'node_modules' -o -name 'build' -o -name 'dist' -o -name '.turbo' \\) -prune -exec rm -rf '{}' +",
+    "dev:api": "cd apps/api && bun run dev",
+    "dev:web": "cd apps/web && bun run dev",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "ruler:apply": "bunx @intellectronica/ruler@latest apply --local-only",
+    "setup": "cd apps/api && bun run dev:setup",
+    "test": "true"
+  },
+  "dependencies": {
+    "@bun-convex-tanstack/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@bun-convex-tanstack/config": "workspace:*",
+    "lefthook": "^2.0.13",
+    "turbo": "^2.6.3",
+    "typescript": "catalog:"
+  },
+  "packageManager": "bun@1.3.9"
+}

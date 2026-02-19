@@ -4,6 +4,14 @@ Project templates for create-seed.
 
 ## Available Templates
 
+### `bun-convex-tanstack`
+
+Bun monorepo template with Turbo, Convex and Tanstack Router web app
+
+```bash
+bun x create-seed@latest my-app -t gh:beeman/templates/bun-convex-tanstack
+```
+
 ### `bun-library`
 
 TypeScript library with Bun, tsup, Biome, and Changesets
