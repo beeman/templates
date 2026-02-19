@@ -14,7 +14,7 @@ export const env = createEnv({
           .map((url) => url.trim())
           .filter(Boolean),
       )
-      .pipe(z.array(z.string().url())),
+      .pipe(z.array(z.url())),
     NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
     PORT: z.coerce.number().default(3000),
   },

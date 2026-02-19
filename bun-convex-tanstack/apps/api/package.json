@@ -1,0 +1,28 @@
+{
+  "name": "@bun-convex-tanstack/api",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "check-types": " tsc --noEmit --project ./convex",
+    "dev": "convex dev",
+    "dev:setup": "convex dev --configure --until-success",
+    "postinstall": "[ -f .env.example ] && [ ! -f .env.local ] && cp -v .env.example .env.local || true"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^2.0.52",
+    "@convex-dev/agent": "catalog:",
+    "@convex-dev/better-auth": "catalog:",
+    "ai": "^5.0.117",
+    "better-auth": "catalog:",
+    "convex": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@bun-convex-tanstack/config": "workspace:*",
+    "@types/node": "^24.3.0",
+    "typescript": "catalog:"
+  }
+}

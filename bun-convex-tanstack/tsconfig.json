@@ -1,0 +1,3 @@
+{
+  "extends": "@bun-convex-tanstack/config/tsconfig.base.json"
+}

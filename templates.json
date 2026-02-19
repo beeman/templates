@@ -1,6 +1,12 @@
 {
   "templates": [
     {
+      "description": "Bun monorepo template with Turbo, Convex and Tanstack Router web app",
+      "id": "gh:beeman/templates/bun-convex-tanstack",
+      "name": "bun-convex-tanstack",
+      "path": "bun-convex-tanstack"
+    },
+    {
       "description": "TypeScript library with Bun, tsup, Biome, and Changesets",
       "id": "gh:beeman/templates/bun-library",
       "name": "bun-library",
