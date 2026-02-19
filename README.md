@@ -27,3 +27,11 @@ Bun monorepo template with Turbo, Hono API, Biome, and Docker support
 ```bash
 bun x create-seed@latest my-app -t gh:beeman/templates/bun-monorepo
 ```
+
+### `bun-tanstack-start`
+
+Bun monorepo template with Turbo, Tanstack Start, Biome and Docker support
+
+```bash
+bun x create-seed@latest my-app -t gh:beeman/templates/bun-tanstack-start
+```

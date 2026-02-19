@@ -1,0 +1,10 @@
+# Lefthook configuration
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  parallel: true
+  jobs:
+    # Add your pre-commit commands here
+    # Example:
+    # - name: lint
+    #   run:  lint
