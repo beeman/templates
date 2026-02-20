@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@bun-tanstack-start/auth": "workspace:*",
+    "@bun-tanstack-start/db": "workspace:*",
+    "@bun-tanstack-start/env": "workspace:*",
+    "@orpc/client": "catalog:",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@bun-tanstack-start/config": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "name": "@bun-tanstack-start/api",
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "type": "module"
+}
