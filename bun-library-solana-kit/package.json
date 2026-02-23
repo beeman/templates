@@ -1,6 +1,6 @@
 {
   "bin": {
-    "bun-library-solana-kit": "dist/cli.js"
+    "bun-library-solana-kit": "dist/cli.mjs"
   },
   "dependencies": {
     "@solana/kit": "^6.0.1",
@@ -16,13 +16,13 @@
     "pkg-pr-new": "^0.0.62",
     "publint": "^0.3.16",
     "testcontainers": "^11.11.0",
-    "tsup": "^8.5.1"
+    "tsdown": "^0.20.3"
   },
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.cts",
@@ -30,11 +30,13 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "description": "TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsup, Biome, and Changesets",
+  "module": "./dist/index.mjs",
+  "description": "TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsdown, Biome, and Changesets",
   "name": "bun-library-solana-kit",
   "repository": {
     "type": "git",
@@ -44,7 +46,7 @@
     "typescript": "^5"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "changeset": "changeset",
     "check-types": "tsc -b --noEmit",
     "ci": "bun run build && bun run lint && bun run check-types && bun run test",
@@ -59,6 +61,6 @@
     "version": "changeset version && bun lint:fix"
   },
   "type": "module",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "version": "0.0.0"
 }
