@@ -1,0 +1,3 @@
+{
+  "extends": "@bun-tanstack-start/config/tsconfig.base.json"
+}

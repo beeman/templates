@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@bun-tanstack-start/db": "workspace:*",
+    "@bun-tanstack-start/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@bun-tanstack-start/config": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "name": "@bun-tanstack-start/auth",
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "type": "module"
+}

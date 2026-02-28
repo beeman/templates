@@ -17,6 +17,12 @@
       "id": "gh:beeman/templates/bun-monorepo",
       "name": "bun-monorepo",
       "path": "bun-monorepo"
+    },
+    {
+      "description": "Bun monorepo template with Turbo, Tanstack Start, Biome and Docker support",
+      "id": "gh:beeman/templates/bun-tanstack-start",
+      "name": "bun-tanstack-start",
+      "path": "bun-tanstack-start"
     }
   ]
 }
