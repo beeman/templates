@@ -4,7 +4,7 @@ TypeScript library template for Solana development using [`@solana/kit`](https:/
 
 ## Features
 
-- **Bun, TypeScript, Biome, tsup, Changesets, GitHub Actions** — batteries included
+- **Bun, TypeScript, Biome, tsdown, Changesets, GitHub Actions** — batteries included
 - **`@solana/kit` client** — `createEmptyClient().use(rpc(...))` plugin pattern
 - **Explorer URL helper** — generate Solana Explorer links
 - **WebSocket URL derivation** — automatic `wss://` from `https://` RPC URLs

@@ -40,7 +40,7 @@ After scaffolding with `--skip-install`, running `bun install` must leave a **cl
 - `.bun-version`
 - `biome.json`
 - `tsconfig.json`
-- `tsup.config.ts`
+- `tsdown.config.ts`
 - `.github/workflows/ci.yaml` and `publish.yaml`
 - `.ruler/` directory with `AGENTS.md` and `ruler.toml`
 

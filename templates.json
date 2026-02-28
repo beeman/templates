@@ -1,13 +1,13 @@
 {
   "templates": [
     {
-      "description": "TypeScript library with Bun, tsup, Biome, and Changesets",
+      "description": "TypeScript library with Bun, tsdown, Biome, and Changesets",
       "id": "gh:beeman/templates/bun-library",
       "name": "bun-library",
       "path": "bun-library"
     },
     {
-      "description": "TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsup, Biome, and Changesets",
+      "description": "TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsdown, Biome, and Changesets",
       "id": "gh:beeman/templates/bun-library-solana-kit",
       "name": "bun-library-solana-kit",
       "path": "bun-library-solana-kit"

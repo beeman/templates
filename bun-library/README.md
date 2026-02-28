@@ -7,7 +7,7 @@ This is a template for creating a modern TypeScript library or package using [Bu
 *   **Bun-first development**: Leverages Bun for lightning-fast installs, runs, and tests.
 *   **TypeScript support**: Write type-safe code from the start.
 *   **Linting & Formatting**: Enforced with [Biome](https://biomejs.dev/) for consistent code style.
-*   **Bundling**: Uses [tsup](https://tsup.js.org/) for efficient bundling into ESM and CJS formats, with type declarations.
+*   **Bundling**: Uses [tsdown](https://tsdown.js.org/) for efficient bundling into ESM and CJS formats, with type declarations.
 *   **Testing**: Built-in unit testing with `bun test`.
 *   **Versioning & Publishing**: Managed with [Changesets](https://github.com/changesets/changesets) for streamlined releases to npm.
 *   **GitHub Actions**: Continuous Integration (CI) workflows for automated build, test, lint, and publish processes.
@@ -63,7 +63,7 @@ This template uses Changesets for versioning and publishing.
 │   └── index.ts     # Main entry point for your library
 ├── test/            # Unit tests
 │   └── index.test.ts # Example test file
-├── tsup.config.ts   # Configuration for tsup (bundling)
+├── tsdown.config.ts   # Configuration for tsdown (bundling)
 ├── biome.json       # Biome linter/formatter configuration
 ├── package.json     # Project metadata and scripts
 └── ... (other config files and GitHub workflows)

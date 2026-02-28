@@ -6,7 +6,7 @@ Project templates for create-seed.
 
 ### `bun-library`
 
-TypeScript library with Bun, tsup, Biome, and Changesets
+TypeScript library with Bun, tsdown, Biome, and Changesets
 
 ```bash
 bun x create-seed@latest my-app -t gh:beeman/templates/bun-library
@@ -14,7 +14,7 @@ bun x create-seed@latest my-app -t gh:beeman/templates/bun-library
 
 ### `bun-library-solana-kit`
 
-TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsup, Biome, and Changesets
+TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsdown, Biome, and Changesets
 
 ```bash
 bun x create-seed@latest my-app -t gh:beeman/templates/bun-library-solana-kit
