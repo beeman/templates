@@ -38,15 +38,11 @@ const config: CSpellSettings = {
     ...getPackageNames(),
     // English
     'beeman',
+    'bun-monorepo',
     'distroless',
-    'ellipsify',
     'nonroot',
     'nossl',
     'nums',
-    'rtishchev',
-    'solana',
-    'surfpool',
-    'vitaly',
   ],
 }
 
