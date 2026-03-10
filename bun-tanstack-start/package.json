@@ -1,0 +1,59 @@
+{
+  "dependencies": {
+    "@bun-tanstack-start/env": "workspace:*",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "description": "Bun monorepo template with Turbo, Tanstack Start, Biome and Docker support",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@bun-tanstack-start/config": "workspace:*",
+    "@intellectronica/ruler": "^0.3.35",
+    "@types/node": "catalog:",
+    "lefthook": "^2.0.13",
+    "turbo": "^2.6.3",
+    "typescript": "catalog:"
+  },
+  "name": "bun-tanstack-start",
+  "packageManager": "bun@1.3.9",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "check-types": "turbo check-types",
+    "ci": "turbo run build check-types test && bun run lint",
+    "clean": "find . -type d \\( -name 'node_modules' -o -name 'build' -o -name 'dist' -o -name '.turbo' \\) -prune -exec rm -rf '{}' +",
+    "db:generate": "turbo -F @bun-tanstack-start/db db:generate",
+    "db:local": "turbo -F @bun-tanstack-start/db db:local",
+    "db:migrate": "turbo -F @bun-tanstack-start/db db:migrate",
+    "db:push": "turbo -F @bun-tanstack-start/db db:push",
+    "db:studio": "turbo -F @bun-tanstack-start/db db:studio",
+    "dev": "turbo dev",
+    "dev:db": "turso dev --port 8080",
+    "dev:web": "cd apps/web && bun run dev",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "ruler:apply": "ruler apply --local-only",
+    "test": "turbo test"
+  },
+  "type": "module",
+  "workspaces": {
+    "catalog": {
+      "@libsql/client": "0.15.15",
+      "@orpc/client": "^1.12.2",
+      "@orpc/openapi": "^1.12.2",
+      "@orpc/server": "^1.12.2",
+      "@orpc/zod": "^1.12.2",
+      "@types/node": "^22.13.14",
+      "better-auth": "^1.4.18",
+      "dotenv": "^17.2.2",
+      "drizzle-orm": "^0.45.1",
+      "libsql": "0.5.22",
+      "typescript": "^5",
+      "zod": "^4.1.13"
+    },
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ]
+  }
+}
