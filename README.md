@@ -9,7 +9,7 @@ Project templates for create-seed.
 TypeScript library with Bun, tsdown, Biome, and Changesets
 
 ```bash
-bun x create-seed@latest my-app -t gh:beeman/templates/bun-library
+bun x create-seed@latest my-app -t gh:create-seed/templates/bun-library
 ```
 
 ### `bun-library-solana-kit`
@@ -17,7 +17,7 @@ bun x create-seed@latest my-app -t gh:beeman/templates/bun-library
 TypeScript library for Solana development with @solana/kit, Surfpool e2e tests, Bun, tsdown, Biome, and Changesets
 
 ```bash
-bun x create-seed@latest my-app -t gh:beeman/templates/bun-library-solana-kit
+bun x create-seed@latest my-app -t gh:create-seed/templates/bun-library-solana-kit
 ```
 
 ### `bun-monorepo`
@@ -25,5 +25,5 @@ bun x create-seed@latest my-app -t gh:beeman/templates/bun-library-solana-kit
 Bun monorepo template with Turbo, Hono API, Biome, and Docker support
 
 ```bash
-bun x create-seed@latest my-app -t gh:beeman/templates/bun-monorepo
+bun x create-seed@latest my-app -t gh:create-seed/templates/bun-monorepo
 ```

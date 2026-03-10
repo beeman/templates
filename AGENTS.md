@@ -1,6 +1,6 @@
 # AGENTS.md — Templates Repo
 
-Guidelines for contributing to and maintaining `beeman/templates`.
+Guidelines for contributing to and maintaining `create-seed/templates`.
 
 ## Structure
 
@@ -60,7 +60,7 @@ The registry maps short names to template paths for `create-seed`:
   "templates": [
     {
       "description": "Short description",
-      "id": "gh:beeman/templates/<dir-name>",
+      "id": "gh:create-seed/templates/<dir-name>",
       "name": "<short-name>",
       "path": "<dir-name>"
     }
