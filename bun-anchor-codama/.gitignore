@@ -1,0 +1,16 @@
+**/*.rs.bk
+*.tsbuildinfo
+.DS_Store
+.anchor
+.claude/*.local.json
+.yarn
+dist
+node_modules
+target/debug
+target/deploy
+target/release
+target/sbpf-solana-solana
+target/test-ledger
+target/.rustc_info.json
+test-ledger
+tmp
